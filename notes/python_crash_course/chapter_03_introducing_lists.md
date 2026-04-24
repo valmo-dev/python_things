@@ -1,26 +1,26 @@
 ### Python Crash Course: Chapter 3 - Introducing Lists
 
-## Resume
+## Résumé
 
-Une `list` Python est l'equivalent d'un tableau JavaScript ou d'un array indexe PHP.
+Une `list` Python est l'équivalent d'un tableau JavaScript ou d'un array indexé PHP.
 
 ```python
 motorcycles = ["honda", "yamaha", "suzuki"]
 ```
 
-Dans ce chapitre, l'idee principale est d'apprendre a manipuler une liste proprement:
+Dans ce chapitre, l'idée principale est d'apprendre à manipuler une liste proprement :
 
-1. acceder aux elements
-2. ajouter ou supprimer des elements
+1. accéder aux éléments
+2. ajouter ou supprimer des éléments
 3. trier ou inverser une liste
-4. connaitre sa taille
-5. eviter les erreurs d'index
+4. connaître sa taille
+5. éviter les erreurs d'index
 
 ## Les points importants
 
 ### 1. Indexation
 
-Python commence a l'index `0`, comme JavaScript.
+Python commence à l'index `0`, comme JavaScript.
 
 ```python
 motorcycles = ["honda", "yamaha", "suzuki"]
@@ -30,28 +30,28 @@ print(motorcycles[1])
 print(motorcycles[-1])
 ```
 
-- `motorcycles[0]` : premier element
-- `motorcycles[-1]` : dernier element
-- l'index negatif est tres idiomatique en Python
+- `motorcycles[0]` : premier élément
+- `motorcycles[-1]` : dernier élément
+- l'index négatif est très idiomatique en Python
 
 Pont mental JS/PHP:
 
 - JS : `motorcycles[0]`
 - PHP : `$motorcycles[0]`
-- Python : meme idee, mais `-1` pour le dernier element est beaucoup plus courant
+- Python : même idée, mais `-1` pour le dernier élément est beaucoup plus courant
 
-### 2. Modifier un element
+### 2. Modifier un élément
 
-Une liste est mutable. Tu peux remplacer une valeur a une position donnee.
+Une liste est mutable. Tu peux remplacer une valeur à une position donnée.
 
 ```python
 motorcycles = ["honda", "yamaha", "suzuki"]
 motorcycles[0] = "ducati"
 ```
 
-Comme en JS, tu modifies le contenu existant au lieu de recreer toute la structure.
+Comme en JS, tu modifies le contenu existant au lieu de recréer toute la structure.
 
-### 3. Ajouter des elements
+### 3. Ajouter des éléments
 
 ```python
 motorcycles = ["honda", "yamaha", "suzuki"]
@@ -60,28 +60,28 @@ motorcycles.append("ducati")
 motorcycles.insert(0, "bmw")
 ```
 
-- `append()` ajoute a la fin
-- `insert(index, valeur)` insere a une position precise
+- `append()` ajoute à la fin
+- `insert(index, valeur)` insère à une position précise
 
 Comparaison:
 
-- JS `array.push()` ressemble a `append()`
-- Python n'a pas besoin d'une syntaxe speciale pour inserer en debut: `insert(0, ...)`
+- JS `array.push()` ressemble à `append()`
+- Python n'a pas besoin d'une syntaxe spéciale pour insérer en début : `insert(0, ...)`
 
-### 4. Supprimer un element avec `del`
+### 4. Supprimer un élément avec `del`
 
-Utilise `del` si tu veux supprimer un element par index sans recuperer sa valeur.
+Utilise `del` si tu veux supprimer un élément par index sans récupérer sa valeur.
 
 ```python
 motorcycles = ["honda", "yamaha", "suzuki"]
 del motorcycles[1]
 ```
 
-`del` est une instruction Python, pas une methode de liste.
+`del` est une instruction Python, pas une méthode de liste.
 
-### 5. Supprimer et recuperer avec `pop()`
+### 5. Supprimer et récupérer avec `pop()`
 
-`pop()` supprime un element et retourne sa valeur.
+`pop()` supprime un élément et retourne sa valeur.
 
 ```python
 motorcycles = ["honda", "yamaha", "suzuki"]
@@ -90,13 +90,13 @@ last_owned = motorcycles.pop()
 first_owned = motorcycles.pop(0)
 ```
 
-- `pop()` sans argument retire le dernier element
-- `pop(0)` retire l'element a l'index `0`
+- `pop()` sans argument retire le dernier élément
+- `pop(0)` retire l'élément à l'index `0`
 
 Pont mental:
 
 - JS : `array.pop()` retire le dernier
-- Python : meme idee, mais tu peux aussi retirer par index
+- Python : même idée, mais tu peux aussi retirer par index
 
 ### 6. Supprimer par valeur avec `remove()`
 
@@ -107,8 +107,8 @@ motorcycles = ["honda", "yamaha", "suzuki", "ducati"]
 motorcycles.remove("ducati")
 ```
 
-- supprime la premiere occurrence trouvee
-- si la valeur n'existe pas, Python leve une erreur
+- supprime la première occurrence trouvée
+- si la valeur n'existe pas, Python lève une erreur
 
 Important:
 
@@ -117,7 +117,7 @@ Important:
 
 ### 7. Trier une liste
 
-Tu as deux manieres principales de trier.
+Tu as deux manières principales de trier.
 
 ```python
 cars = ["bmw", "audi", "toyota", "subaru"]
@@ -135,9 +135,9 @@ print(sorted(cars))
 print(cars)
 ```
 
-`sorted()` retourne une nouvelle vue triee sans modifier la liste d'origine.
+`sorted()` retourne une nouvelle vue triée sans modifier la liste d'origine.
 
-Tu peux aussi inverser l'ordre du tri:
+Tu peux aussi inverser l'ordre du tri :
 
 ```python
 cars.sort(reverse=True)
@@ -146,16 +146,16 @@ print(sorted(cars, reverse=True))
 
 ### 8. Inverser l'ordre avec `reverse()`
 
-`reverse()` ne trie pas. Il inverse juste l'ordre actuel des elements.
+`reverse()` ne trie pas. Il inverse juste l'ordre actuel des éléments.
 
 ```python
 cars = ["bmw", "audi", "toyota", "subaru"]
 cars.reverse()
 ```
 
-Si la liste etait deja dans un ordre quelconque, cet ordre est simplement retourne.
+Si la liste était déjà dans un ordre quelconque, cet ordre est simplement retourné.
 
-### 9. Connaitre la taille d'une liste
+### 9. Connaître la taille d'une liste
 
 ```python
 cars = ["bmw", "audi", "toyota", "subaru"]
@@ -166,58 +166,58 @@ print(len(cars))
 - JS : `cars.length`
 - PHP : `count($cars)`
 
-En Python, `len(...)` est une fonction built-in, pas une propriete.
+En Python, `len(...)` est une fonction built-in, pas une propriété.
 
-### 10. Erreur classique: `IndexError`
+### 10. Erreur classique : `IndexError`
 
-Si tu demandes un index inexistant, Python leve une erreur.
+Si tu demandes un index inexistant, Python lève une erreur.
 
 ```python
 motorcycles = ["honda", "yamaha", "suzuki"]
 print(motorcycles[3])
 ```
 
-Erreur:
+Erreur :
 
 ```python
 IndexError: list index out of range
 ```
 
-Cause:
+Cause :
 
-- la liste contient 3 elements
+- la liste contient 3 éléments
 - les index valides sont `0`, `1` et `2`
 
-## Tableau mental a retenir
+## Tableau mental à retenir
 
-- `del liste[i]` : supprimer par index, sans recuperer
-- `liste.pop()` : supprimer le dernier et recuperer
-- `liste.pop(i)` : supprimer a un index et recuperer
+- `del liste[i]` : supprimer par index, sans récupérer
+- `liste.pop()` : supprimer le dernier et récupérer
+- `liste.pop(i)` : supprimer à un index et récupérer
 - `liste.remove(x)` : supprimer par valeur
 - `liste.sort()` : trier en place
 - `sorted(liste)` : trier sans modifier l'original
 - `liste.reverse()` : inverser l'ordre actuel
 - `len(liste)` : obtenir la taille
-- `liste[-1]` : acceder au dernier element
+- `liste[-1]` : accéder au dernier élément
 
-## Differences utiles par rapport a JS/PHP
+## Différences utiles par rapport à JS/PHP
 
 - Python a `remove(valeur)` directement sur les listes
-- `sorted(...)` est tres pratique quand tu veux garder la liste d'origine intacte
-- `-1` pour le dernier element est une habitude Python importante
-- `del` est une instruction du langage, pas une methode appelee sur la liste
+- `sorted(...)` est très pratique quand tu veux garder la liste d'origine intacte
+- `-1` pour le dernier élément est une habitude Python importante
+- `del` est une instruction du langage, pas une méthode appelée sur la liste
 
 ## En une phrase
 
-Le chapitre 3 t'apprend a manipuler une liste Python comme une structure simple, mutable et tres pratique: lire, modifier, supprimer, trier, inverser et compter.
+Le chapitre 3 t'apprend à manipuler une liste Python comme une structure simple, mutable et très pratique : lire, modifier, supprimer, trier, inverser et compter.
 
-## Mini fiche de revision
+## Mini fiche de révision
 
 ```python
 names = ["ada", "grace", "margaret"]
 
-names[0]          # premier element
-names[-1]         # dernier element
+names[0]          # premier élément
+names[-1]         # dernier élément
 names.append("linus")
 names.insert(1, "guido")
 del names[0]
